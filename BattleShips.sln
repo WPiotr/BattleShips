@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+#
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FB91BC63-8551-4F39-BFCF-40F71F588F13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleShips.ConsoleApp", "src\BattleShips.ConsoleApp\BattleShips.ConsoleApp.csproj", "{1C703453-8775-40FF-83DE-A798BF2C94E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleShips.Domain", "src\BattleShips.Domain\BattleShips.Domain.csproj", "{619852F1-F78E-416E-87F6-785596C79D0E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B9C92C55-DA57-4FE3-A9DA-F21534C1FCD3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BattleShips.UnitTests", "tests\BattleShips.UnitTests\BattleShips.UnitTests.csproj", "{6BD4EAF5-C8CB-40CC-B487-020ADB75C0B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C703453-8775-40FF-83DE-A798BF2C94E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C703453-8775-40FF-83DE-A798BF2C94E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C703453-8775-40FF-83DE-A798BF2C94E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C703453-8775-40FF-83DE-A798BF2C94E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{619852F1-F78E-416E-87F6-785596C79D0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{619852F1-F78E-416E-87F6-785596C79D0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{619852F1-F78E-416E-87F6-785596C79D0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{619852F1-F78E-416E-87F6-785596C79D0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BD4EAF5-C8CB-40CC-B487-020ADB75C0B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BD4EAF5-C8CB-40CC-B487-020ADB75C0B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BD4EAF5-C8CB-40CC-B487-020ADB75C0B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BD4EAF5-C8CB-40CC-B487-020ADB75C0B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1C703453-8775-40FF-83DE-A798BF2C94E5} = {FB91BC63-8551-4F39-BFCF-40F71F588F13}
+		{619852F1-F78E-416E-87F6-785596C79D0E} = {FB91BC63-8551-4F39-BFCF-40F71F588F13}
+		{6BD4EAF5-C8CB-40CC-B487-020ADB75C0B3} = {B9C92C55-DA57-4FE3-A9DA-F21534C1FCD3}
+	EndGlobalSection
+EndGlobal
