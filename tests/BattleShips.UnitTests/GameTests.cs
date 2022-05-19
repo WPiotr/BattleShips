@@ -1,4 +1,5 @@
 using BattleShips.Domain;
+using BattleShips.Domain.ValueObjects;
 using FluentAssertions;
 using Xunit;
 
