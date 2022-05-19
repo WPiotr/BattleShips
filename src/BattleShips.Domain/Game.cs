@@ -20,11 +20,7 @@ namespace BattleShips.Domain
 
         public GameScore GetScore()
         {
-            var shipsLeft = 0;
-            foreach (var ship in _ships)
-            {
-                if (!ship.Coordinates.All(_hits.Contains)) shipsLeft++;
-            }
+            var shipsLeft = _ships.Count(ship => !ship.Coordinates.All(_hits.Contains));
 
             return new GameScore(shipsLeft);
         }
@@ -49,7 +45,7 @@ namespace BattleShips.Domain
     {
         public Coordinate[] Coordinates { get; }
 
-        public Ship(params Coordinate[] coordinates)
+        public Ship(Coordinate[] coordinates)
         {
             Coordinates = coordinates;
         }
