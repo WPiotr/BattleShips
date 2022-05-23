@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using BattleShips.Domain.Interfaces;
 using BattleShips.Domain.ValueObjects;
 
 namespace BattleShips.Domain
@@ -8,18 +9,22 @@ namespace BattleShips.Domain
     {
         private readonly int _maxColumn;
         private readonly int _maxRow;
+        private readonly IShipGenerator _shipGenerator;
         private Ship[] _ships;
         private readonly IList<Coordinate> _hits;
 
-        public Game(int maxColumn, int maxRow)
+        public Game(int maxColumn, int maxRow, IShipGenerator shipGenerator)
         {
             _maxColumn = maxColumn;
             _maxRow = maxRow;
+            _shipGenerator = shipGenerator;
             _hits = new List<Coordinate>();
         }
 
-        public void Start(params Ship[] ships)
+        public void Start(params (int shipSize ,string shipName)[] shipDefinitions)
         {
+            var ships = _shipGenerator.GenerateShips(shipDefinitions);
+            
             ValidateShips(ships);
             _ships = ships;
         }
