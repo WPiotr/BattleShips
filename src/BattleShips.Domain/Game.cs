@@ -23,7 +23,7 @@ namespace BattleShips.Domain
 
         public void Start(params (int shipSize ,string shipName)[] shipDefinitions)
         {
-            var ships = _shipGenerator.GenerateShips(shipDefinitions);
+            var ships = _shipGenerator.GenerateShips(shipDefinitions, _maxColumn, _maxRow);
             
             ValidateShips(ships);
             _ships = ships;

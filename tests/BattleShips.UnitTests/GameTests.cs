@@ -117,7 +117,7 @@ namespace BattleShips.UnitTests
         private static IShipGenerator SetupShipGeneratorMock((int, string)[] shipDefinitions, Ship[] ships)
         {
             var shipGenerator = Substitute.For<IShipGenerator>();
-            shipGenerator.GenerateShips(shipDefinitions).Returns(ships);
+            shipGenerator.GenerateShips(shipDefinitions, Columns, Rows).Returns(ships);
             return shipGenerator;
         }
     }

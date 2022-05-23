@@ -4,6 +4,6 @@ namespace BattleShips.Domain.Interfaces
 {
     public interface IShipGenerator
     {
-        Ship[] GenerateShips((int, string)[] shipDefinitions);
+        Ship[] GenerateShips((int, string)[] shipDefinitions, int maxColumn, int maxRow);
     }
 }
