@@ -5,7 +5,7 @@ using BattleShips.Domain.ValueObjects;
 
 namespace BattleShips.Domain
 {
-    public class Game
+    public class Game : IGame
     {
         private readonly int _maxColumn;
         private readonly int _maxRow;
