@@ -46,12 +46,7 @@ namespace BattleShips.Domain
                 return CellStatus.Miss;
             }
 
-            if (ship != null)
-            {
-                return ship.Coordinates.All(_hits.Contains) ? CellStatus.Sink : CellStatus.Hit;
-            }
-
-            return CellStatus.None;
+            return ship.Coordinates.All(_hits.Contains) ? CellStatus.Sink : CellStatus.Hit;
         }
 
         public void HitAt(int column, int row)
