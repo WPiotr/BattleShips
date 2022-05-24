@@ -23,16 +23,20 @@ namespace BattleShips.ConsoleApp
                 (4, "Destroyer 2")
             });
 
+            Console.WriteLine("Welcome to BattleShip Game :)");
+            Console.WriteLine("Please type a cell to hit a ship. For example: A9");
+            
             while (true)
             {
                 var gameScore = game.GetScore();
 
+                PrintBoard(gameScore.Hits, maxColumn, maxRow);
+
                 if (gameScore.ShipsLeft == 0)
                 {
+                    Console.WriteLine("Game finished all ships destroyed.");
                     break;
                 }
-
-                PrintBoard(gameScore.Hits, maxColumn, maxRow);
                 var input = Console.ReadLine();
                 if (!CoordinateParser.TryParse(input, out var column, out var row))
                 {
@@ -40,6 +44,7 @@ namespace BattleShips.ConsoleApp
                 }
                 
                 game.HitAt(column, row);
+                Console.Clear();
             }
         }
 
