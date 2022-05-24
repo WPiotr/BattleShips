@@ -3,7 +3,7 @@ using BattleShips.Domain.ValueObjects;
 using FluentAssertions;
 using Xunit;
 
-namespace BattleShips.UnitTests
+namespace BattleShips.UnitTests.Domain.ValueObjects
 {
     public class ShipTests
     {

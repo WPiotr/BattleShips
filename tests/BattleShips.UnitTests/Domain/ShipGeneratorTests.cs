@@ -5,7 +5,7 @@ using BattleShips.Domain.ValueObjects;
 using FluentAssertions;
 using Xunit;
 
-namespace BattleShips.UnitTests
+namespace BattleShips.UnitTests.Domain
 {
     public class ShipGeneratorTests
     {
