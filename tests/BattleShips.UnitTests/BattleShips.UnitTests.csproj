@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\BattleShips.ConsoleApp\BattleShips.ConsoleApp.csproj" />
     <ProjectReference Include="..\..\src\BattleShips.Domain\BattleShips.Domain.csproj" />
   </ItemGroup>
 
