@@ -6,6 +6,6 @@ namespace BattleShips.Domain.Interfaces
     {
         void Start(params (int shipSize, string shipName)[] shipDefinitions);
         GameScore GetScore();
-        void HitAt(Coordinate coordinate);
+        void HitAt(int column, int row);
     }
 }

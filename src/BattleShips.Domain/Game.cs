@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using BattleShips.Domain.Interfaces;
@@ -21,10 +22,10 @@ namespace BattleShips.Domain
             _hits = new List<Coordinate>();
         }
 
-        public void Start(params (int shipSize ,string shipName)[] shipDefinitions)
+        public void Start((int shipSize, string shipName)[] shipDefinitions)
         {
             var ships = _shipGenerator.GenerateShips(shipDefinitions, _maxColumn, _maxRow);
-            
+
             ValidateShips(ships);
             _ships = ships;
         }
@@ -32,13 +33,45 @@ namespace BattleShips.Domain
         public GameScore GetScore()
         {
             var shipsLeft = _ships.Count(ship => !ship.Coordinates.All(_hits.Contains));
-
-            return new GameScore(shipsLeft);
+            (int column, int row, CellStatus)[] hits = _hits.Select(coordinate =>
+                (coordinate.Column, coordinate.Row, GetCellStatus(coordinate))).ToArray();
+            return new GameScore(shipsLeft, hits);
         }
 
-        public void HitAt(Coordinate coordinate)
+        private CellStatus GetCellStatus(Coordinate coordinate)
         {
+            var ship = _ships.FirstOrDefault(ship => ship.Coordinates.Contains(coordinate)); 
+            if (ship == null)
+            {
+                return CellStatus.Miss;
+            }
+
+            if (ship != null)
+            {
+                return ship.Coordinates.All(_hits.Contains) ? CellStatus.Sink : CellStatus.Hit;
+            }
+
+            return CellStatus.None;
+        }
+
+        public void HitAt(int column, int row)
+        {
+            var coordinate = new Coordinate(column, row);
+            ValidateCoordinate(coordinate);
             _hits.Add(coordinate);
+        }
+
+        private void ValidateCoordinate(Coordinate coordinate)
+        {
+            if (coordinate.Column < 0 && coordinate.Column >= _maxColumn)
+            {
+                throw new Exception($"Column should be greater than zero and lower than {_maxColumn}");
+            }
+
+            if (coordinate.Row < 0 && coordinate.Row >= _maxRow)
+            {
+                throw new Exception($"Row should be greater than zero and lower than {_maxRow}");
+            }
         }
 
         private void ValidateShips(Ship[] ships)

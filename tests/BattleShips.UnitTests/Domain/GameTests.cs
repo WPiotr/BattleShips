@@ -60,7 +60,7 @@ namespace BattleShips.UnitTests.Domain
             game.Start(shipDefinitions);
 
             //Act
-            game.HitAt(new Coordinate(1, 1));
+            game.HitAt(1, 1);
 
             //Assert
             game.GetScore().ShipsLeft.Should().Be(0);
@@ -84,7 +84,7 @@ namespace BattleShips.UnitTests.Domain
             game.Start(shipDefinitions);
 
             //Act
-            game.HitAt(new Coordinate(1, 1));
+            game.HitAt(1, 1);
 
             //Assert
             game.GetScore().ShipsLeft.Should().Be(ships.Length);
@@ -107,8 +107,8 @@ namespace BattleShips.UnitTests.Domain
             game.Start(shipDefinitions);
 
             //Act
-            game.HitAt(new Coordinate(1, 1));
-            game.HitAt(new Coordinate(1, 2));
+            game.HitAt(1, 1);
+            game.HitAt(1, 2);
 
             //Assert
             game.GetScore().ShipsLeft.Should().Be(1);

@@ -4,10 +4,10 @@ namespace BattleShips.ConsoleApp.Utils
 {
     public static class CoordinateParser
     {
-        public static bool TryParse(string input, out int? column, out int? row)
+        public static bool TryParse(string input, out int column, out int row)
         {
-            column = null;
-            row = null;
+            column = default;
+            row = default;
             var trimmedInput = input.Trim();
             var columnLetter = trimmedInput[0];
             if (!char.IsLetter(columnLetter))
